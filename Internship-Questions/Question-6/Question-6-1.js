@@ -1,25 +1,25 @@
- //Palindrome -word, phrase, number or sequence of characters that reads
-// the same forward as it does backwards.
+//Import the prompt-sync
 const prompt = require("prompt-sync")();
-function isPalindrome(word){
-    //Convert the word to lowercase to ensure case-insensitive
-    //comparison
-    word=word.toLowerCase();
-    //Remove any non-alphanumeric characters using the regular expression
-    word=word.replace(/[^a-z0-9]/g, '')
 
-    //Compare the original word with its reverse
-    return word===word.split('').reverse().join('');
-
+//Write the function to confirm the Palindrome
+function checkPalindrome(inputWord) {
+    //Initialize the reversedWord to empty string
+    let reversedWord = "";
+    for (let i = inputWord.length - 1; i >= 0; i--) {
+        reversedWord += inputWord[i];
+    }
+    //The inputWord is the same as the reversed word return the Palindrome
+    if (word === reversedWord) {
+        return "Palindrome";
+    }
+    //If the inputWord is not equal to the inputWord return the reversedWord:
+    else {
+        return reversedWord;
+    }
 }
 
-//Test the function
-// const inputWord="level";
-//Get the value from the user
-const inputWord=prompt("Enter the required word:")
-if(isPalindrome(inputWord)){
-    console.log(`${inputWord} is a palindrome.`);
-}
-else {
-    console.log(`${inputWord} is not a palindrome`);
-}
+// Example usage
+const userInput = prompt("Enter required word:");
+const result = checkPalindrome(userInput);
+console.log(result);
+
